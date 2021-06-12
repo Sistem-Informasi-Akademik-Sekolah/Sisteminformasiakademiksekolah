@@ -15,14 +15,9 @@ class CreateDatanilaiTable extends Migration
     {
         Schema::create('datanilai', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_siswa');
-            $table->string('kelas');
-            $table->string('nama_mapel');
-            $table->string('nilai_pengetahuan');
-            $table->string('nilai_keterampilan');
-            $table->string('nilai_KKM');
-            $table->string('deskripsi');
-            $table->string('predikat');
+            $table->bigInteger('siswas_id');
+            $table->integer('nilai');
+            $table->integer('kkm');
             $table->timestamps();
         });
     }

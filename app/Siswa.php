@@ -19,4 +19,7 @@ public function dataraport()
 // public function datamapel(){
 //     return $this->hashMany('App\DataMapel');
 // }
+public function datanilai(){
+    return $this->hashOne('App\DataNilai');
+    }
 }

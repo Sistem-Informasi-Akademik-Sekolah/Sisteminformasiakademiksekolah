@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\DataNilai;
 use Auth;
+use App\Siswa;
 class DataNilaiController extends Controller
 {
     /**
@@ -29,7 +30,8 @@ class DataNilaiController extends Controller
      */
     public function create()
     {
-        return view('datanilai.create');
+        $siswas = Siswa::all();
+        return view('datanilai.create',compact('siswas'));
     }
 
     /**
@@ -41,14 +43,17 @@ class DataNilaiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_siswa' => 'required',
-            'kelas' => 'required',
-            'nama_mapel' => 'required',
-            'nilai_pengetahuan' => 'required',
-            'nilai_keterampilan' => 'required',
-            'nilai_KKM'=>'required',
-            'deskripsi'=>'required',
-            'predikat'=>'required',
+            // 'nama_siswa' => 'required',
+            // 'kelas' => 'required',
+            // 'nama_mapel' => 'required',
+            // 'nilai_pengetahuan' => 'required',
+            // 'nilai_keterampilan' => 'required',
+            // 'nilai_KKM'=>'required',
+            // 'deskripsi'=>'required',
+            // 'predikat'=>'required',
+            'siswas_id'=>'required',
+            'nilai'=>'required',
+            'kkm'=>'required',
         ]);
 
         DataNilai::create($request->all());

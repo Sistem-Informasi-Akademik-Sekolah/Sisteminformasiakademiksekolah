@@ -41,7 +41,7 @@
                             <!-- small box -->
                             <div class="small-box bg-primary">
                               <div class="inner">
-                                <h3>Data Guru dan Stuff</h3>
+                                <h3>Data Guru</h3>
                               </div>
                               <div class="card-body">
                                 {{$gurudankaryawans->count('id')}}
@@ -61,7 +61,7 @@
                                 {{$datamapel->count('id')}}
                               </div>
                               <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
+                                <i class="fas fa-book-reader"></i>
                               </div>
                             </div>
                           </div>
@@ -75,7 +75,7 @@
                                 {{$datanilai->count('id')}}
                               </div>
                               <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
+                                <i class="ion ion-stats-bars"></i>
                               </div>
                             </div>
                           </div>
