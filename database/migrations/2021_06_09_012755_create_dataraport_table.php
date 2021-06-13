@@ -15,10 +15,12 @@ class CreateDataraportTable extends Migration
     {
         Schema::create('dataraport', function (Blueprint $table) {
             $table->id();
-            $table->BigInteger('siswas_id')->nullable();
-            $table->BigInteger('kelass_id')->nullable();
-            $table->BigInteger('datamapel_id')->nullable();
-            $table->BigInteger('datanilai_id')->nullable();
+            $table->foreignId('siswas_id')->constrained()->onDelete('cascade')->onUpdate('cascade')->nullable();
+            $table->bigInteger('datamapel_id');
+            $table->bigInteger('kelass_id');
+            $table->bigInteger('datanilai_id');
+            $table->string('deskripsi');
+            $table->string('predikat');
             $table->timestamps();
         });
     }

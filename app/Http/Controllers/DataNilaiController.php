@@ -79,7 +79,8 @@ class DataNilaiController extends Controller
      */
     public function edit(DataNilai $datanilai)
     {
-        return view('datanilai.edit',compact('datanilai'));
+        $siswas = Siswa::all();
+        return view('datanilai.edit',compact('datanilai','siswas'));
     }
     /**
      * Update the specified resource in storage.
@@ -92,14 +93,9 @@ class DataNilaiController extends Controller
     {
         
         Datanilai::where('id', $datanilai->id)->update([
-            'nama_siswa' => $request->nama_siswa,
-            'kelas' => $request->kelas,
-            'nama_mapel' => $request->nama_mapel,
-            'nilai_pengetahuan' => $request->nilai_pengetahuan,
-            'nilai_keterampilan' => $request->nilai_keterampilan,
-            'nilai_KKM'=>$request->nilai_KKM,
-            'deskripsi'=>$request->deskripsi,
-            'predikat'=>$request->predikat,
+            'nilai' => $request->nilai,
+            'kkm'=>$request->kkm,
+            // 'siswas_id'=>$request->siswas_id,
         ]);
         return redirect('datanilai')->with('status','data berhasil di ubah');
     }

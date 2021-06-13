@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class DataRaport extends Model
 {
     protected $table = 'dataraport';
-    protected $fillable = ["siswas_id","kelass_id","datamapel_id","datanilai_id"];
+    protected $fillable = ["siswas_id","kelass_id","datamapel_id","deskripsi","predikat"];
     public function siswas(){
         return $this->belongsTo('App\Siswa');
     }
