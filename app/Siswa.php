@@ -22,4 +22,7 @@ public function dataraport()
 public function datanilai(){
     return $this->hashOne('App\DataNilai');
     }
+    public function uasdanuts(){
+        return $this->hashOne('App\UasdanUts');
+    }
 }

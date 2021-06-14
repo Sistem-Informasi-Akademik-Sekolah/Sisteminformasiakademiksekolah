@@ -16,7 +16,7 @@ class CreateUasdanUtsTable extends Migration
         Schema::create('uasdan_uts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('siswas_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->bigInteger('mapel_id');
+            $table->bigInteger('datamapel_id');
             $table->integer('nilai_utsatu');
             $table->integer('nilai_utsdua');
             $table->string('jumlah_uts');

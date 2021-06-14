@@ -79,6 +79,12 @@ Route::put('datanilai/{datanilai}','DataNilaiController@update')->middleware('ch
 Route::delete('datanilai/{datanilai}','DataNilaiController@destroy')->middleware('checkRole:admin');
 /*end data nilai*/
 
+// uas dan uts //
+Route::get('uasdanuts','UasdanUtsController@index')->middleware('checkRole:admin');
+Route::get('uasdanuts/create','UasdanUtsController@create')->middleware('checkRole:admin');
+Route::post('uasdanuts/store','UasdanUtsController@store')->middleware('checkRole:admin');
+// end uas dan uts //
+
 /*cetak raport*/
 Route::get('dataraport','DataRaportController@index')->middleware('checkRole:admin');
 Route::get('dataraport/create','DataRaportController@create')->middleware('checkRole:admin');

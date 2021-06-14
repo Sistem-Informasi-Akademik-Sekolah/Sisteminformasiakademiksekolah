@@ -25,4 +25,7 @@ class DataMapel extends Model
     public function gurudankaryawans(){
     return $this->belongsTo('App\GurudanKaryawan');
     }
+    public function uasdanuts(){
+        return $this->hashOne('App\UasdanUts');
+    }
 }
