@@ -40,15 +40,7 @@ class UasdanUtsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nilai_utsatu' => 'required',
-            'nilai_utsdua' => 'required',
-            'jumlah_uts' => 'required',
-            'nilai_uasatu' => 'required',
-            'nilai_uasdua' => 'required',
-            'jumlah_uas' => 'required',
-            'jumlahsemua' => 'required',
-        ]);
+         
         $uasdanuts = new UasdanUts;
         $uasdanuts->siswas_id = $request->siswas_id;
         $uasdanuts->datamapel_id = $request->datamapel_id;

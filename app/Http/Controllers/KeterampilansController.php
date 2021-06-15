@@ -3,21 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Pengetahuan;
+use App\Keterampilan;
 use App\Siswa;
 use App\Kelas;
 
-class PengetahuanController extends Controller
+class KeterampilansController extends Controller
 {
-
     public function index(){
-        $pengetahuans = Pengetahuan::all();
-        return view('pengetahuan.index',compact('pengetahuans'));
+        $keterampilans = Keterampilan::all();
+        return view('keterampilan.index',compact('keterampilans'));
     }
     public function create(){
         $siswas = Siswa::all();
         $kelass = kelas::all();
-        return view('pengetahuan.create',compact('siswas','kelass'));
+        return view('keterampilan.create',compact('siswas','kelass'));
     }
     public function simpan(Request $request){
         $request->validate([
@@ -32,7 +31,7 @@ class PengetahuanController extends Controller
         'nilaikd9' => 'required',
         'nilaikd10' => 'required',
         ]);
-        Pengetahuan::create($request->all());
-        return redirect('pengetahuan')->with('status','data berhasil di tambah');
+        Keterampilan::create($request->all());
+        return redirect('keterampilans')->with('status','data berhasil di tambah');
     }
 }

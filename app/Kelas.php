@@ -19,5 +19,11 @@ class Kelas extends Model
     // public function datamapel(){
     //     return $this->hashMany('App\DataMapel');
     //     }
+    public function keterampilans(){
+        return $this->hashOne('App\Keterampilan');
+    }
+    public function pengetahuans(){
+        return $this->hashOne('App\Pengetahuan');
+    }
 }
 

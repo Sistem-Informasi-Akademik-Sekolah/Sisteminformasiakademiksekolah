@@ -25,4 +25,10 @@ public function datanilai(){
     public function uasdanuts(){
         return $this->hashOne('App\UasdanUts');
     }
+    public function keterampilans(){
+        return $this->hashMany('App\Keterampilan');
+    }
+    public function pengetahuans(){
+        return $this->hashOne('App\Pengetahuan');
+    }
 }

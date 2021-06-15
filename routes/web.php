@@ -85,6 +85,19 @@ Route::get('uasdanuts/create','UasdanUtsController@create')->middleware('checkRo
 Route::post('uasdanuts/store','UasdanUtsController@store')->middleware('checkRole:admin');
 // end uas dan uts //
 
+// keterampilan //
+Route::get('keterampilans','KeterampilansController@index')->middleware('checkRole:admin');
+Route::get('keterampilans/create','KeterampilansController@create')->middleware('checkRole:admin');
+Route::post('keterampilans/simpan','KeterampilansController@simpan')->middleware('checkRole:admin');
+// end keterampilan //
+
+
+// keterampilan //
+Route::get('pengetahuan','PengetahuanController@index')->middleware('checkRole:admin');
+Route::get('pengetahuan/create','PengetahuanController@create')->middleware('checkRole:admin');
+Route::post('pengetahuan/simpan','PengetahuanController@simpan')->middleware('checkRole:admin');
+// end keterampilan //
+
 /*cetak raport*/
 Route::get('dataraport','DataRaportController@index')->middleware('checkRole:admin');
 Route::get('dataraport/create','DataRaportController@create')->middleware('checkRole:admin');

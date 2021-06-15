@@ -18,7 +18,9 @@ class CreateDataraportTable extends Migration
             $table->foreignId('siswas_id')->constrained()->onDelete('cascade')->onUpdate('cascade')->nullable();
             $table->bigInteger('datamapel_id');
             $table->bigInteger('kelass_id');
-            $table->bigInteger('datanilai_id');
+            $table->foreignId('pengetahuans_id')->constrained()->onDelete('cascade')->onUpdate('cascade')->nullable();
+            $table->bigInteger('datanilai_id')->nullable();
+            $table->foreignId('keterampilans_id')->constrained()->onDelete('cascade')->onUpdate('cascade')->nullable();
             $table->string('deskripsi');
             $table->string('predikat');
             $table->timestamps();
