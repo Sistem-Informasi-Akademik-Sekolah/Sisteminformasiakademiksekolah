@@ -71,7 +71,7 @@
             <input type="number" name="nilaikd10" id="nilaikd10" class="form-control" max="100">
         </div>
     </div>
-    <div class="mb-3">
+    <div class="mb-3" style="display: none;">
         <label for="totalsemua" class="form-label">Jumlah Semua</label>
         <input type="text" readonly class="form-control" id="totalsemua" name="totalsemua">
         <small>jika nan itu artinya angkanya tidak ada/belum terisi semua</small>

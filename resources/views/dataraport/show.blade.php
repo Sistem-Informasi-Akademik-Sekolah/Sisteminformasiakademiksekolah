@@ -38,10 +38,10 @@
     <td>{{$dataraport->id}}</td>
     <td>{{$dataraport->siswas->namalengkap}}</td>
     <td>{{$dataraport->datamapel->nama_mapel}}</td>
-    <td>{{$dataraport->datanilai->nilai_pengetahuan}}</td>
-    <td>{{$dataraport->datanilai->nilai_keterampilan}}</td>
-    <td>{{$dataraport->datanilai->deskripsi}}</td>
-    <td>{{$dataraport->datanilai->predikat}}</td>
+    <td>{{$dataraport->pengetahuans_id}}</td>
+    <td>{{$dataraport->keterampilans_id}}</td>
+    <td>{{$dataraport->deskripsi}}</td>
+    <td>{{$dataraport->predikat}}</td>
     </tr>
 </tbody>
 </table>

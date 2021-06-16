@@ -13,4 +13,7 @@ class Keterampilan extends Model
     public function kelass(){
         return $this->belongsTo('App\Kelas');
     }
+    public function dataraport(){
+        return $this->hashMany('App\DataRaport');
+    }
 }

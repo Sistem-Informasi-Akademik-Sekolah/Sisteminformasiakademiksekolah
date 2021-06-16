@@ -8,6 +8,8 @@ use App\Siswa;
 use App\Kelas;
 use App\DataMapel;
 use App\DataNilai;
+use App\Keterampilan;
+use App\Pengetahuan;
 
 class DataRaportController extends Controller
 {
@@ -18,7 +20,7 @@ class DataRaportController extends Controller
      */
     public function index()
     {
-        $dataraport = DataRaport::all();
+        $dataraport = DataRaport::latest()->paginate();
         // dd($dataraport);
         return view('dataraport.index',compact('dataraport'));
     }
@@ -34,7 +36,9 @@ class DataRaportController extends Controller
         $kelass = Kelas::all();
         $datamapel = DataMapel::all();
         $datanilai = DataNilai::all();
-        return view('dataraport.create',compact('siswas','kelass','datamapel','datanilai'));
+        $keterampilans = Keterampilan::all();
+        $pengetahuans = Pengetahuan::all();
+        return view('dataraport.create',compact('siswas','kelass','datamapel','datanilai','keterampilans','pengetahuans'));
     }
 
     /**
@@ -46,6 +50,10 @@ class DataRaportController extends Controller
     public function store(Request $request)
     {
         DataRaport::create($request->all());
+        // $pengetahuans_id->$request->input('pengetahuans_id');
+        // $keterampilans_id->$request->input('keterampilans_id');
+        // $nilaiakhir = ($pengetahuans_id + $keterampilans_id)/2;
+        // echo $nilaiakhir;
         return redirect('dataraport');
     }
 

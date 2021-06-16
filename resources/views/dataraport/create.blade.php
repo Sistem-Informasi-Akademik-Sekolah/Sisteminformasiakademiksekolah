@@ -46,16 +46,40 @@
                 @enderror
                 </div>
                 <div class="mb-3">
-                <label for="datanilai" class="form-label">Data Nilai</label>
+                <label for="datanilai" class="form-label">KKM</label>
                 <select class="form-select form-control" name="datanilai_id" aria-label="Default select example">
                 @foreach ($datanilai as $nilai)
-                <option value="{{$nilai->id}}">{{$nilai->nilai_KKM}}</option>
+                <option value="{{$nilai->id}}">{{$nilai->kkm}}</option>
                 @endforeach
                 </select>
                 @error('siswas_id')
                 <div class="alert alert-danger">{{ "isi nama siswa" }}</div>
                 @enderror
                 </div>
+                <div class="mb-3">
+                <label for="keterampilans_id" class="form-label">Nilai Keterampilan</label>
+                <input type="text" class="form-control" id="keterampilans_id" name="keterampilans_id" readonly value="@forelse ($keterampilans as $keterampilan){{$keterampilan->totalsemua}}
+                @empty
+                    {{"tidak ada data"}}
+                @endforelse
+                ">
+                </div>
+                <div class="mb-3">
+                <label for="pengetahuans_id" class="form-label">Nilai Pengetahuan</label>
+                <input type="text" class="form-control" id="pengetahuans_id" name="pengetahuans_id" readonly value="@forelse ($pengetahuans as $pengetahuan){{$pengetahuan->totalsemua}}
+                @empty
+                    {{"tidak ada data"}}
+                @endforelse
+                ">
+                </div>
+                    <div class="mb-3">
+                    <label for="deskripsi" class="form-label">Deskripsi</label>
+                    <input type="text" class="form-control" id="deskripsi" name="deskripsi">
+                    </div>
+                    <div class="mb-3">
+                    <label for="predikat" class="form-label">Predikat</label>
+                    <input type="text" class="form-control" id="predikat" name="predikat">
+                    </div>
                 <button type="submit" class="btn btn-primary mb-3">Submit</button>
             </form>
         </div>

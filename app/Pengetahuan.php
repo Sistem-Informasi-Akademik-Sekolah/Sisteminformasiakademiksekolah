@@ -13,4 +13,7 @@ class Pengetahuan extends Model
     public function siswas(){
         return $this->belongsTo('App\Siswa');
     }
+    public function dataraport(){
+        return $this->hashMany('App\DataRaport');
+    }
 }

@@ -20,31 +20,25 @@
             <table class="table table-bordered">
             <thead>
             <tr>
-                {{-- <th scope="col">No</th> --}}
+                <th scope="col">No</th>
                 <th scope="col">Nama Siswa</th>
                 <th scope="col">Kelas</th>
-                <th scope="col">Pelajaran</th>
-                <th scope="col">Document</th>
+                <th scope="col">Dokument</th>
+                {{-- <th scope="col">Pelajaran</th>
+                <th scope="col">Document</th> --}}
             </tr>
             </thead>
             <tbody>
                 @foreach ($dataraport as $no => $raport)
+                <td>{{$no+1}}</td>
+                <td>{{$raport->siswas->namalengkap}}</td>
+                <td>{{$raport->kelass->kelas}}</td>
+                <td>
+                    <a href="/dataraport/{{$raport->id}}" class="btn btn-info">Dokument</a>
+                </td>
+                {{-- <td>{{$raport->datamapel->}}</td>
+                <td></td> --}}
                 <tr>
-                {{-- <th scope="col">{{$no+1}}</th> --}} 
-                    <td>{{$raport->siswas->namalengkap}}</td> 
-                    <td>{{$raport->kelass->kelas}}</td>
-                    <td>{{$raport->datamapel->nama_mapel}}</td>
-                    <td>
-                        <a href="/dataraport/{{$raport->id}}" class="btn btn-info">Detail</a>
-                    </td>
-                {{-- <td> --}}
-                    {{-- <a href="/datanilai/edit/{{$datanilai->id}}" class="btn btn-success">Edit</a>
-                    <form action="/datanilai/{{$datanilai->id}}" method="post">
-                    @method('DELETE')
-                    @csrf
-                    <button class="btn btn-danger">Hapus</button>
-                    </form>
-                </td> --}}
                 @endforeach
             </tr>
             </tbody>
